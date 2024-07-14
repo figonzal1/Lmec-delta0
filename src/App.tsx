@@ -9,39 +9,6 @@ function App() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     //setGreetMsg(await invoke("greet", { name }));
   }
-
-  /*
-  return (
-    <div className="bg-red-400 min-h-screen">
-      <div className="flex flex-row h-screen">
-        <div className="flex-none w-32 bg-green-300">
-          <div className="flex flex-col items-center my-10">
-            <img src="tauri.svg" alt="Logo" className="p-5" />
-            <h1>Lmec-delta0</h1>
-
-            <div className="flex flex-col gap-5 justify-center">
-              <button className="hover:bg-gray-200 rounded-xl px-4 py-1">
-                <VscDebugDisconnect size={32} className="text-blue-400" />
-              </button>
-
-              <button className="hover:bg-gray-200 rounded-xl px-4 py-1">
-                <VscDebugDisconnect size={32} className="text-blue-400" />
-              </button>
-
-              <button className="hover:bg-gray-200 rounded-xl px-4 py-1">
-                <VscDebugDisconnect size={32} className="text-blue-400" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-1 bg-blue-400">
-          <h1>Otro lado</h1>
-        </div>
-      </div>
-    </div>
-  );*/
-
   return (
     <>
       <BrowserRouter>
