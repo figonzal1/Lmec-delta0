@@ -6,7 +6,7 @@ import Cexcard from "../components/Cexcard";
 import CexSecretsForm from "../components/CexSecretsForm";
 
 const Integrations = () => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 
   return (
     <div className="flex flex-col items-center bg-gray-200/20 h-screen p-14">
@@ -18,12 +18,8 @@ const Integrations = () => {
           description="Plataforma de intercambio de criptoderivados que ofrece trading
           inteligente, copy trading y apalancamiento hasta 125x."
           logo={Logo}
-          onConnected={() => {
-            onOpen();
-          }}
         />
       </div>
-      <CexSecretsForm isOpen={isOpen} onOpenChange={onOpenChange} />
     </div>
   );
 };
