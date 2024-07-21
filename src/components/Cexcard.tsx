@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 import { MdDone } from "react-icons/md";
 import { TbPlugConnected, TbPlugConnectedX, TbSettings } from "react-icons/tb";
-import CexSecretsForm from "./CexSecretsForm";
+import CexSecretsForm from "./form/CexSecretsForm";
 
 const Cexcard = ({
   name,

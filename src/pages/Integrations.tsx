@@ -1,9 +1,5 @@
-import {
-  useDisclosure,
-} from "@nextui-org/react";
 import Logo from "../assets/cex/bitget_logo.jpg";
 import Cexcard from "../components/Cexcard";
-import CexSecretsForm from "../components/CexSecretsForm";
 
 const Integrations = () => {
 
