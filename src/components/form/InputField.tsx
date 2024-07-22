@@ -10,12 +10,14 @@ const InputField = ({
   label,
   error,
   errorMsg,
+  defaultValue,
 }: {
   register: UseFormRegister<FormValues>;
   name: keyof FormValues;
   label: string;
   error?: FieldError;
   errorMsg: boolean;
+  defaultValue: string | null;
 }) => {
   const [toggleVisibility, setToggleVisibility] = useState(false);
 
@@ -24,6 +26,7 @@ const InputField = ({
       {...register(name, { required: true })}
       type={toggleVisibility ? "text" : "password"}
       label={label}
+      defaultValue={defaultValue === null ? "" : defaultValue}
       radius="lg"
       isRequired
       isInvalid={error ? true : false}

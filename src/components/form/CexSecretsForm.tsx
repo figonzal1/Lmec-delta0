@@ -6,14 +6,15 @@ import {
   ModalFooter,
   Button,
 } from "@nextui-org/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import InputField from "./InputField";
+import { SecretVault } from "../../utils/secret_vault";
 
 export type FormValues = {
-  apiKey: string;
-  apiSecret: string;
-  password: string;
+  apiKey: string | null;
+  apiSecret: string | null;
+  password: string | null;
 };
 
 const CexSecretsForm = ({
@@ -33,12 +34,45 @@ const CexSecretsForm = ({
   } = useForm<FormValues>();
 
   const [testPassed, setTestPassed] = useState(false);
+  const [secrets, setSecrets] = useState<FormValues>({
+    apiKey: null,
+    apiSecret: null,
+    password: null,
+  });
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     console.log("Form submitted:", data);
+
+    if (data.apiKey && data.apiSecret && data.password) {
+      const vault = new SecretVault();
+      await vault.init();
+      
+      await vault.insertRecord("bitget_apiKey", data.apiKey);
+      await vault.insertRecord("bitget_apiSecret", data.apiSecret);
+      await vault.insertRecord("bitget_password", data.password);
+    }
     onClose();
   });
 
+  useEffect(() => {
+    const fetchSecrets = async () => {
+      const vault = new SecretVault();
+
+      await vault.init();
+
+      const apiKey = (await vault.getRecord("bitget_apiKey")) ?? "";
+      const apiSecret = (await vault.getRecord("bitget_apiSecret")) ?? "";
+      const password = (await vault.getRecord("bitget_password")) ?? "";
+
+      const values: FormValues = { apiKey, apiSecret, password };
+
+      console.log("VAlues fetched:", values);
+
+      setSecrets(values);
+    };
+
+    fetchSecrets();
+  }, []);
 
   return (
     <Modal
@@ -63,6 +97,7 @@ const CexSecretsForm = ({
               label="Clave API"
               error={errors.apiKey}
               errorMsg={errors.apiKey?.type === "required"}
+              defaultValue={secrets.apiKey}
             />
 
             <InputField
@@ -71,6 +106,7 @@ const CexSecretsForm = ({
               label="Clave Secreta"
               error={errors.apiSecret}
               errorMsg={errors.apiSecret?.type === "required"}
+              defaultValue={secrets.apiSecret}
             />
 
             <InputField
@@ -79,8 +115,9 @@ const CexSecretsForm = ({
               label="Contraseña token (passphrase)"
               error={errors.password}
               errorMsg={errors.password?.type === "required"}
+              defaultValue={secrets.password}
             />
-            
+
             <Button
               color="success"
               variant="flat"

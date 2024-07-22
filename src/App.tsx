@@ -4,11 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Integrations from "./pages/Integrations";
 
-function App() {
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    //setGreetMsg(await invoke("greet", { name }));
-  }
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -24,6 +20,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
