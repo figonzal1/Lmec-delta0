@@ -13,17 +13,17 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.4.2",
+    "@nextui-org/react": "^2.4.6",
     "@tauri-apps/api": ">=2.0.0-beta.0",
-    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "@tauri-apps/plugin-shell": "^2.0.0-beta.8",
     "@tauri-apps/plugin-sql": "2.0.0-beta.7",
-    "@types/node": "^20.14.10",
-    "framer-motion": "^11.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@types/node": "^20.14.12",
+    "framer-motion": "^11.3.17",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
     "@emotion/is-prop-valid": "^1.3.0",
@@ -31,19 +31,19 @@
     "@farmfe/core": "^1.3.11",
     "@farmfe/js-plugin-postcss": "^1.8.0",
     "@farmfe/plugin-react": "^1.2.0",
-    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "@tauri-apps/cli": "^2.0.0-beta.22",
     "@types/jest": "^29.5.12",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "internal-ip": "^7.0.0",
     "jest": "^29.7.0",
-    "oxlint": "^0.6.0",
-    "postcss": "^8.4.39",
+    "oxlint": "^0.6.1",
+    "postcss": "^8.4.40",
     "prettier": "3.3.3",
     "react-refresh": "^0.14.2",
-    "tailwindcss": "^3.4.4",
-    "ts-jest": "^29.2.2",
-    "typescript": "^5.2.2"
+    "tailwindcss": "^3.4.6",
+    "ts-jest": "^29.2.3",
+    "typescript": "^5.5.4"
   }
 }
