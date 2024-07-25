@@ -1,14 +1,7 @@
 import { Switch, Tab, Tabs } from "@nextui-org/react";
 import { useEffect } from "react";
-import useDarkMode from "use-dark-mode";
 
 const Settings = () => {
-  const darkMode = useDarkMode(true);
-
-  useEffect(() => {
-    console.log("DarkMode ", darkMode);
-  }, [darkMode]);
-
   return (
     <div className="p-12 dark:bg-gray-500 min-h-screen">
       <h1 className="text-4xl dark:text-white">Settings</h1>
@@ -28,9 +21,9 @@ const Settings = () => {
             </div>
             <Switch
               className="mx-auto"
-              isSelected={darkMode.value}
+              //isSelected={darkMode.value}
               onValueChange={() => {
-                darkMode.toggle();
+              //  darkMode.toggle();
               }}
             ></Switch>
           </div>
