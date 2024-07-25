@@ -1,5 +1,4 @@
 import { Switch, Tab, Tabs } from "@nextui-org/react";
-import { useEffect } from "react";
 
 const Settings = () => {
   return (
