@@ -4,13 +4,15 @@ import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Integrations from "./pages/Integrations";
 import Settings from "./pages/Settings";
+import { useTheme } from "./assets/hooks/useTheme";
 
 function App() {
+  const { darkMode } = useTheme();
 
   return (
     <>
       <BrowserRouter>
-        <div className="flex">
+        <div className={`${darkMode ? "dark" : ""} flex`}>
           <Sidebar />
           <div className="flex-1">
             <Routes>

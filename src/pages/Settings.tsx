@@ -1,6 +1,9 @@
-import { Switch, Tab, Tabs } from "@nextui-org/react";
+import { Switch, Tab, Tabs, toggle } from "@nextui-org/react";
+import { useTheme } from "../assets/hooks/useTheme";
 
 const Settings = () => {
+  const { darkMode, toggleTheme } = useTheme();
+
   return (
     <div className="p-12 dark:bg-gray-500 min-h-screen">
       <h1 className="text-4xl dark:text-white">Settings</h1>
@@ -20,9 +23,9 @@ const Settings = () => {
             </div>
             <Switch
               className="mx-auto"
-              //isSelected={darkMode.value}
+              isSelected={darkMode}
               onValueChange={() => {
-              //  darkMode.toggle();
+                toggleTheme();
               }}
             ></Switch>
           </div>
